@@ -20,7 +20,7 @@ body {
   font-family: "Raleway", sans-serif;
   font-size: 40px;
   font-weight: normal;
-  color: #26a69a;
+  color: #eee8d5;
   background-image: url("../images/sky_background.jpg")
 }
 
@@ -109,10 +109,8 @@ body {
   font-style: italic;
 }
 
-.reveal small {
+.reveal p {
   font-weight: 300;
-  color: #eee8d5;
-  font-size: 1.2em;
 }
 
 .reveal ol,
