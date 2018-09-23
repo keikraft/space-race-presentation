@@ -1,10 +1,8 @@
 # Space Race
 
-A presentation about the past and modern Space Race and Exploration.
+A presentation about the past and modern Space Race and Exploration. Made with [reveal.js](https://github.com/hakimel/reveal.js/)
 
-<img src="https://i.imgur.com/YSXzWjC.png" width="1024px" height="578px" />
-
-Made with [reveal.js](https://github.com/hakimel/reveal.js/)
+<img src="https://i.imgur.com/YSXzWjC.png" />
 
 ## How to use it
 
