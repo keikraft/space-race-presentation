@@ -2,7 +2,7 @@
 
 A presentation about the past and modern Space Race and Exploration.
 
-![](images-assets.nasa.gov/image/as10-27-3890/as10-27-3890~orig.jpg =640x640)
+![](https://images-assets.nasa.gov/image/as10-27-3890/as10-27-3890~orig.jpg =640x640)
 
 Made with [reveal.js](https://github.com/hakimel/reveal.js/)
 
