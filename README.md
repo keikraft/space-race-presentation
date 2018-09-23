@@ -10,14 +10,20 @@ Made with [reveal.js](https://github.com/hakimel/reveal.js/)
 
 You need a local server to run it, install one of your choice, I use `static-server`
 
-`npm install -g static-server`
+```
+npm install -g static-server
+```
 
 Then just run static-server in the project folder
 
-`static-server`
+```
+static-server
+```
 
 And open the browser in the url the server is serving at
 
-`http://localhost:9080`
+```
+http://localhost:9080
+```
 
 Present it with Passion!
