@@ -26,7 +26,7 @@
 			<div class="slides">
 				<!-- Cover -->
 				<section style="flex-direction: column; align-items: flex-start; justify-content: flex-end;" data-background-image="images/moon_earth.jpg">
-					<h3>SPACE RACE</h3>
+					<h2 style="margin: 0">SPACE RACE</h2>
 				</section>
         
         <!-- Space Race Early Events -->
@@ -46,9 +46,12 @@
 					</section>
 					
 					<!-- Slide 2.2 -->
-					<section style="flex-direction: column; align-items: center;">
-						<h2 style="font-size: 1.9em; margin: 0 0 60px 0;">Soviet Union takes the lead</h2>
-						<img data-src="images/sputnikCollage.png" height="700px" />
+					<section style="flex-direction: column; align-items: flex-start;">
+            <h2 style="margin: 0;">Soviet Union</h2>
+            <h3>takes the lead</h3>
+            <div style="flex: 1; display: flex; justify-content: flex-end; width: 100%;">
+              <img data-src="images/sputnikCollage.png" height="700px" />
+            </div>
 						<!-- <iframe data-src="https://www.youtube.com/embed/5M-QinwmdKc?rel=0&amp;autoplay=1&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;playlist=5M-QinwmdKc&amp;start=150&amp;end=163&amp;mute=1"  width="100%" height="100%" style="margin: 50px" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
 					</section>
 
@@ -88,7 +91,7 @@
 						<div style="flex:1; display: flex; justify-content: space-between; align-items: center">
 							<div style="flex-basis: 40%; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end; height: 63%;">
 								<h4 style="margin: 0; font-weight: 600;">Yuri Gagarin</h4>
-								<p style="margin: 0;">first person in space, 1691</span>
+								<p style="margin: 0;">first person in space</span>
 							</div>
 							<div style="flex-basis: 50%; height: 100%">
 								<iframe data-src="https://www.youtube.com/embed/bJzygLptwf8?rel=0&amp;autoplay=1&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;playlist=bJzygLptwf8&amp;start=38&amp;mute=1" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -104,75 +107,126 @@
 						<h3 style="margin: 0">We choose to go to the</h3>
 						<h1>MOON</h2>
 						<iframe data-src="https://www.youtube.com/embed/WZyRbnpGyzQ?rel=0&amp;controls=0&amp;showinfo=0&amp;start=1050&amp;end=1086" width="65%" height="65%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-					</section>
+          </section>
 
-					<!-- Slide 2.7 -->
-					<section style="flex-direction: column;">
-							<h2>Gemini & Apollo</h2>
-							<div style="flex: 1; display: flex; justify-content: space-evenly; align-items: center;">
-								<img data-src="images/gemini_program.png" width="480px" />
-								<img data-src="images/apollo_program.png" width="480px" />
-							</div>
-					</section>
+          <!-- Slide 2.8 -->
+          <section style="flex-direction: column;">
+            <h2>Gemini & Apollo</h2>
+            <div style="flex: 1; display: flex; justify-content: space-evenly; align-items: center;">
+              <img data-src="images/gemini_program.png" width="480px" />
+              <img data-src="images/apollo_program.png" width="480px" />
+            </div>
+          </section>
 				</section>
         
+        <section>Astronauts class</section>
+
         <!-- Rocket Science and Orbital Mechanics Basics -->
-				<section>
-          <!-- Slide 3.1 -->
-					<section style="flex-direction: column; align-items: center" data-transition="fade-in convex-out">
-							<h3 margin="">Rocket Science Basics</h3>
-              <div style="flex: 1; display: flex; justify-content: space-between; align-items: center;">
-                <div style="flex-basis: 50%; text-align: left;">
-                  <ul>
-                    <li>Two or more stages</li>
-                    <li>Parabolic trajectory</li>
-                    <li>Orbit above 100km</li>
-                  </ul>
-                </div>
-								<img data-src="images/flight_to_orbit.png" width="800px" />
-							</div>
-          </section>
-          <!-- Slide 3.2 -->
-					<section data-transition="convex-in fade-out">
-              <h3>Orbital Mechanics Basics</h3>
-              <span>orbital velocity: 28128 km/h</span>
-					</section>
-				</section>
+        <section style="flex-direction: column;">
+          <h2>BASICS</h2>
+          <div style="flex: 1; position: relative; width: 100%; height: 100%;">
+            <!-- Slide 3.1 -->
+            <div class="fragment fade-in-then-out" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0; display: flex; justify-content: space-between; align-items: center;">
+              <div style="flex-basis: 50%; text-align: left;">
+                <h4>Rocket Launch</h4>
+                <ul>
+                  <li>Thrust energy >> rocket weight</li>
+                  <li>Two or more stages</li>
+                  <li>Parabolic trajectory</li>
+                </ul>
+              </div>
+              <img data-src="images/flight_to_orbit.png" width="700px" />
+            </div>
+            <!-- Slide 3.2 -->
+            <div class="fragment fade-in" style="position: absolute; top: 0; left: 0; bottom: 0; right: 0; display: flex; justify-content: space-between; align-items: center;">
+              <div style="flex-basis: 50%; text-align: left;">
+                <h4>Orbital Mechanics</h4>
+                <ul>
+                  <li>Orbit above 160km (LEO)</li>
+                  <li>Craft velocity: ~28128 km/h</li>
+                  <li>More height -> less speed needed</li>
+                </ul>
+              </div>
+              <iframe data-src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Comparison_satellite_navigation_orbits.svg"  style="padding: 40px; background-color: #f6fbff;" width="600px" height="600px"></iframe>
+            </div>
+          </div>
+        </section>
 
-				<!-- Rendezvous & Docking -->
-				<!-- Slide 4 -->
-				<section>
-					Rendezvous & Docking
-						https://www.youtube.com/watch?v=_cHm7bJolnE
-				</section>
+        <!-- Gemini Program -->
+        <!-- Slide 4 -->
+        <section style="flex-direction: column; align-items: center;" data-background-image="images/gemini_rendezvous.jpg" data-background-opacity="0.3" data-backaground-size="60%" data-background-position="0 100%">
+          <h3>Gemini Missions</h3>
+          <div style="flex: 1; display: flex; justify-content: space-between; align-items: center; width: 100%">
+            <ul style="flex-basis: 70%; text-align: left">
+              <li>Reentry Module / Heat Shield</li>
+              <li>Orbital Maneuvers</li>
+              <li>Rendezvous</li>
+              <li>Docking</li>
+              <li>EVA</li>
+            </ul>
+            <iframe data-src="https://www.youtube.com/embed/_cHm7bJolnE?rel=0&amp;autoplay=1&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;playlist=_cHm7bJolnE&amp;mute=1" width="60%" height="60%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </section>
 
-				<!-- Saturn V -->
+        <!-- Saturn V -->
+        <section  data-background-image="images/us_rockets.jpg" data-background-size="60%" data-background-position="80%">
+          <h1 style="text-align: left;">Saturn V</h1>
+        </section>
+
+				<!-- Apollo Missions -->
 				<section>
-          <!-- Slide 5.1 -->
-          <section style="align-items: center;"  data-transition-speed="slow">
-            <h1>Saturn V</h1>
+          <!-- Slide 6.1 -->
+          <section style="flex-direction: column; justify-content: center; align-items: flex-start;"  data-transition-speed="slow">
+            <h1 style="margin: 0;">Apollo</h1>
+            <h1>Missions</h1>
           </section>
           
-          <!-- Slide 5.2 -->
-				  <section data-transition="convex-in fade-out" data-transition-speed="slow">
+          <!-- Slide 6.2 -->
+				  <section data-transition-speed="slow">
             <iframe data-src="https://www.youtube.com/embed/vIGbOoZzlYI?rel=0&amp;autoplay=1&amp;controls=0&amp;showinfo=0&amp;start=636" style="transform: scale(1.3)" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </section>
   
-          <!-- Slide 5.2 -->
+          <!-- Slide 6.2 -->
           <section>
-            Saturn V Stats
-        
             People worked to make it happen
               https://www.theguardian.com/science/2009/jul/02/apollo-11-back-up-team
           </section>
 
           <!-- Slide 14 -->
+          <section style="flex-direction: column; background-color: #090909;">
+            <h2>The Journey</h2>
+            <div style="flex: 1; display: flex; justify-content: 100%; align-items: center; overflow: hidden;">
+              <img data-src="images/journey_to_the_moon.jpg" style="transition: all .3s ease-in-out; transform: scale(2.5) translateX(35%);"/>
+            </div>
+          </section>
+
+          <!-- Slide 14 -->
           <section>
-              <h2>Punch Cards</h2>
-              <iframe data-src="https://www.youtube.com/embed/CkOOazEJcUc?rel=0&amp;autoplay=1&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;playlist=CkOOazEJcUc&amp;start=273&amp;end=302&amp;mute=1" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </section>
-          
-				</section>
+            <h2>Punch Cards</h2>
+            <iframe data-src="https://www.youtube.com/embed/CkOOazEJcUc?rel=0&amp;autoplay=1&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;playlist=CkOOazEJcUc&amp;start=273&amp;end=302&amp;mute=1" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </section>
+
+          <!-- Slide 14 -->
+          <section>
+            <h2>Quotes</h2>
+          </section>
+        </section>
+        
+        <section>
+          Space Shuttle, ISS, MIR, Mars
+        </section>
+
+        <section>
+          Today: Private Companies    
+        </section>
+
+        <section>
+          Space X
+        </section>
+
+        <section style="justify-content: center; align-items: center;">
+          <h1>THANK YOU! 🚀</h1>
+        </section>
 			</div>
 		</div>
 
@@ -181,7 +235,8 @@
 		<script>
 			Reveal.initialize({
 				// Control Setup
-				controlsTutorial: false,
+        controlsTutorial: false,
+        controlsBackArrows: 'hidden',
 				history: true,
 				touch: false,
 				progress: false,
@@ -195,7 +250,7 @@
 				display: 'flex',
 				width: 1440,
 				height: 900,
-				margin: 0.05,
+				margin: 0.1,
 				center: false,
 				minScale: 0.2,
 				maxScale: 1.5,
@@ -211,7 +266,11 @@
 					37: 'prev', // go to the previous slide when the arrow left key is pressed
 					39: 'next', // go to the next slide when the arrow right key is pressed
 				}
-			});
+      });
+      // Show first fragment went slide changes.
+      Reveal.addEventListener('slidechanged', () => {
+        Reveal.nextFragment();
+      });
 		</script>
 	</body>
 </html>
