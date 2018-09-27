@@ -38,7 +38,6 @@ body {
   font-size: 40px;
   font-weight: normal;
   color: var(--main-text-color);
-  background-image: url("../../images/sky_background.jpg");
 }
 
 ::selection {
@@ -81,7 +80,7 @@ body {
 }
 
 .reveal h1 {
-  font-size: 3.77em;
+  font-size: 3.50em;
 }
 
 .reveal h2 {
@@ -130,7 +129,6 @@ body {
 .reveal dl,
 .reveal ul {
   display: inline-block;
-  margin: 0 0 0 1em;
 }
 
 .reveal ol {
@@ -195,51 +193,6 @@ body {
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
 }
 
-.reveal code {
-  font-family: monospace;
-  text-transform: none;
-}
-
-.reveal pre code {
-  display: block;
-  padding: 5px;
-  overflow: auto;
-  max-height: 400px;
-  word-wrap: normal;
-}
-
-.reveal table {
-  margin: auto;
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-.reveal table th {
-  font-weight: bold;
-}
-
-.reveal table th,
-.reveal table td {
-  text-align: left;
-  padding: 0.2em 0.5em 0.2em 0.5em;
-  border-bottom: 1px solid;
-}
-
-.reveal table th[align="center"],
-.reveal table td[align="center"] {
-  text-align: center;
-}
-
-.reveal table th[align="right"],
-.reveal table td[align="right"] {
-  text-align: right;
-}
-
-.reveal table tbody tr:last-child th,
-.reveal table tbody tr:last-child td {
-  border-bottom: none;
-}
-
 .reveal sup {
   vertical-align: super;
   font-size: smaller;
@@ -259,6 +212,14 @@ body {
 
 .reveal small * {
   vertical-align: top;
+}
+
+.reveal .caption {
+  position: absolute;
+  left: 0.2em;
+  bottom: 1em;
+  font-size: 0.6em;
+  font-weight: 100;
 }
 
 /*********************************************
