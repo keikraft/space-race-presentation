@@ -43,7 +43,11 @@ Reveal.configure({
   }
 });
 
-// Show first fragment went slide changes.
-Reveal.addEventListener("slidechanged", () => {
-  Reveal.nextFragment();
+// Show first fragment when slide changes forward.
+Reveal.addEventListener("slidechanged", event => {
+  const { h, v } = Reveal.getIndices();
+  const navigatingBackwards = event.indexh < h || event.indexv < v;
+  if (!navigatingBackwards) {
+    Reveal.nextFragment();
+  }
 });
