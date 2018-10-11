@@ -5736,6 +5736,9 @@
       return loaded;
     },
 
+    // Dispatch Events through Reveal
+    dispatchEvent: dispatchEvent,
+
     // Forward event binding to the reveal DOM element
     addEventListener: function(type, listener, useCapture) {
       if ("addEventListener" in window) {

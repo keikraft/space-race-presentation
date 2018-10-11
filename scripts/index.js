@@ -20,6 +20,10 @@ Reveal.initialize({
   transition: "fade",
   backgroundTransition: "fade",
 
+  // Parallax Background
+  parallaxBackgroundImage: "images/sky_background.jpg",
+  parallaxBackgroundSize: "1980px 1080px",
+
   // Slides Layout
   display: "flex",
   width: 1600,
@@ -36,12 +40,22 @@ Reveal.initialize({
   ]
 });
 
-Reveal.configure({
-  keyboard: {
-    37: "prev", // go to the previous slide when the arrow left key is pressed
-    39: "next" // go to the next slide when the arrow right key is pressed
-  }
+// ------- KEY BINDINGS
+
+// Play Video on spacebar
+Reveal.addKeyBinding(32, () => {
+  Reveal.dispatchEvent("playvideo");
 });
+// Previous slide on arrow left
+Reveal.addKeyBinding(37, () => {
+  Reveal.prev();
+});
+// Next slide on arrow right
+Reveal.addKeyBinding(39, () => {
+  Reveal.next();
+});
+
+// ------- FRAGMENTS
 
 // Show first fragment when slide changes forward.
 let indexh = 0;
