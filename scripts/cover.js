@@ -4,7 +4,7 @@ function coverFragmentHandler() {
   const coverTitleElement = document.createElement("h2");
   coverTitleElement.innerText = "SPACE RACE";
   coverTitleElement.style =
-    "position: absolute; bottom: 0; left: 0; margin: 40px 60px";
+    "position: absolute; bottom: 0; left: 0; margin: 40px 60px;";
 
   // Background Images
   const earthImageElement = document.createElement("div");
@@ -36,8 +36,11 @@ function coverFragmentHandler() {
 
   return fragmentEventHandler;
 }
-Reveal.addEventListener("ready", () => {
-  const eventHandler = coverFragmentHandler();
-  Reveal.addEventListener("fragmentshown", eventHandler);
-  Reveal.addEventListener("fragmenthidden", eventHandler);
-});
+
+export default function() {
+  Reveal.addEventListener("ready", () => {
+    const eventHandler = coverFragmentHandler();
+    Reveal.addEventListener("fragmentshown", eventHandler);
+    Reveal.addEventListener("fragmenthidden", eventHandler);
+  });
+}

@@ -1,14 +1,24 @@
 // Journey Slides fragments control
+
 function theJourneyFragmentHandler() {
   const transformations = {
-    initialPosition: { transform: "scale(1) translate(0, 0)", duration: "1s" },
+    initialPosition: {
+      transform: "scale(1) translate(0, 0)",
+      duration: "1s"
+    },
     launch: { transform: "scale(3) translate(35%, -4%)", duration: "1s" },
     toTheMoon: {
       transform: "scale(3.5) translate(25%, -40%)",
       duration: ".8s"
     },
-    landing: { transform: "scale(3.5) translate(-35%, -30%)", duration: "5s" },
-    backHome: { transform: "scale(3.5) translate(-35%, 25%)", duration: "1s" },
+    landing: {
+      transform: "scale(3.5) translate(-35%, -30%)",
+      duration: "5s"
+    },
+    backHome: {
+      transform: "scale(3.5) translate(-35%, 25%)",
+      duration: "1s"
+    },
     reentry: { transform: "scale(3.4) translate(35%, 15%)", duration: "5s" }
   };
   const journeyTitleElement = document.getElementById("the-journey-title");
@@ -32,6 +42,8 @@ function theJourneyFragmentHandler() {
   return fragmentEventHandler;
 }
 
-const eventHandler = theJourneyFragmentHandler();
-Reveal.addEventListener("fragmentshown", eventHandler);
-Reveal.addEventListener("fragmenthidden", eventHandler);
+export default function() {
+  const eventHandler = theJourneyFragmentHandler();
+  Reveal.addEventListener("fragmentshown", eventHandler);
+  Reveal.addEventListener("fragmenthidden", eventHandler);
+}
