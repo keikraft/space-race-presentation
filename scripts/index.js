@@ -44,10 +44,14 @@ Reveal.configure({
 });
 
 // Show first fragment when slide changes forward.
+let indexh = 0;
+let indexv = 0;
 Reveal.addEventListener("slidechanged", event => {
-  const { h, v } = Reveal.getIndices();
-  const navigatingBackwards = event.indexh < h || event.indexv < v;
+  const navigatingBackwards = event.indexh < indexh || event.indexv < indexv;
   if (!navigatingBackwards) {
     Reveal.nextFragment();
   }
+  // Update indices
+  indexh = event.indexh;
+  indexv = event.indexv;
 });

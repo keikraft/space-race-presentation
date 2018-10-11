@@ -4738,6 +4738,10 @@
     var fragments = sortFragments(currentSlide.querySelectorAll(".fragment"));
     if (fragments.length) {
       navigateFragment(null, 1 - fragments.length);
+      dispatchEvent("fragmentshown", {
+        fragment: fragments[0],
+        fragments: fragments
+      });
     }
   }
 

@@ -1,5 +1,6 @@
 // Slides Youtube Videos Control
 function slideVideoFragmentHandler() {
+  const fadeOutDuration = 1500;
   let player;
   let playerElem;
 
@@ -13,7 +14,7 @@ function slideVideoFragmentHandler() {
       setTimeout(() => {
         clearInterval(timerId);
         resolve();
-      }, 1500);
+      }, fadeOutDuration);
     });
   }
 
@@ -22,28 +23,28 @@ function slideVideoFragmentHandler() {
   }
 
   function unmountPlayer() {
-    player.destroy();
     player = null;
     playerElem = null;
   }
 
-  async function keyDownEventHandler(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    document.removeEventListener("keydown", keyDownEventHandler);
-
-    // fadeOutVideo();
-    await fadeOutVolume();
-    // unmountPlayer();
-    Reveal.next();
-  }
-
-  function fragmentEventHandler(event) {
+  async function fragmentEventHandler(event) {
     if (event.fragment.classList.contains("video")) {
       player = new YT.Player(event.fragment, {});
       playerElem = event.fragment;
-      playerElem.style.transition = "opacity 1.5s ease-out";
-      document.addEventListener("keydown", keyDownEventHandler);
+      playerElem.style.transition = `opacity ${fadeOutDuration}ms ease-out`;
+    }
+
+    if (event.fragment.classList.contains("video-fade-out") && player) {
+      fadeOutVideo();
+      await fadeOutVolume();
+      unmountPlayer();
+      Reveal.next();
+    }
+
+    if (event.fragment.classList.contains("video-fade-out-sound") && player) {
+      await fadeOutVolume();
+      unmountPlayer();
+      Reveal.next();
     }
   }
 
@@ -53,8 +54,4 @@ function slideVideoFragmentHandler() {
 export default function() {
   const eventHandler = slideVideoFragmentHandler();
   Reveal.addEventListener("fragmentshown", eventHandler);
-  Reveal.addEventListener("slidechanged", event => {
-    console.log(event);
-    // event.previousSlide, event.currentSlide, event.indexh, event.indexv
-  });
 }
