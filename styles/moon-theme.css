@@ -1,7 +1,7 @@
 /**
  * Moon Theme.
  */
-@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,500);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:200,300,500);
 
 html * {
   color-profile: sRGB;
@@ -22,7 +22,7 @@ html * {
   --main-font-family: "Roboto Mono", sans-serif;
   --secondary-font-family: "";
   --title-font-weight: 500;
-  --text-font-weight: 100;
+  --text-font-weight: 200;
 }
 
 /*********************************************
