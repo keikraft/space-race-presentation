@@ -1,10 +1,8 @@
-import cover from "./cover.js";
 import videoControl from "./video-control.js";
 import audioControl from "./audio-control.js";
 import theJourney from "./the-journey.js";
 
 // Init Slide's Scripts
-cover();
 videoControl();
 audioControl();
 theJourney();
