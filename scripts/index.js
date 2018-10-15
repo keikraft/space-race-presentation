@@ -10,6 +10,7 @@ theJourney();
 // Init RevealJS
 Reveal.initialize({
   // Control Setup
+  controls: false,
   controlsTutorial: false,
   controlsBackArrows: "hidden",
   history: true,
