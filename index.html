@@ -105,14 +105,23 @@
           </section>
 
           <!-- Mercury -->
-					<section style="flex-direction: column; align-items: center;">
-              <h2>Mercury</h2>
-              <img data-src="images/mercury.gif" height="700px" />
+          <section>
+            <div style="flex:1; display: flex; justify-content: space-between; align-items: center">
+              <div style="flex-basis: 70%; height: 100%; align-items: center;display: flex;justify-content: flex-start;">
+                <img data-src="images/mercury.gif" height="700px" />
+              </div>
+              <div style="flex-basis: 40%; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; height: 80%;">
+                <h2 style="text-align: left; margin: 0; line-height: 1;">Mercury Program</h2>
+                <div style="text-align: left;">
+                  <p style="margin: 0;">Last test before Alan Shepard flight.</span>
+                </div>
+              </div>
 
               <div class="caption">
                 1958 - 1963
               </div>
-            </section>
+            </div>
+          </section>
 
 					<!-- Gagarin -->
 					<section>
@@ -181,12 +190,11 @@
           <!-- Basics 2 -->
           <section>
             <div style="flex: 1; display: flex; align-items: center; justify-content: flex-end;">
-              <img data-src="images/soyuz-blueprint.jpg" height="900px" >
+              <img data-src="images/soyuz_blueprint.jpg" height="900px" >
             </div>
             <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center">
               <div style="text-align: left;">
-                <p>Anatomy</p>
-                <p>of a</p>
+                <p style="font-size: 1.12em;">Anatomy of a</p>
                 <h2>Rocket</h2>  
               </div>
             </div>
@@ -195,9 +203,9 @@
           <!-- Basics 3 -->
           <section style="justify-content: space-between; align-items: center;">
             <img data-src="images/flight_to_orbit.png" width="800px" />
-            <div style="flex-basis: 38%; text-align: left; height: 100%">
+            <div style="flex-basis: 38%; text-align: left; height: 72%">
               <h2 style="margin-left: -80px">Rocket Principles</h2>
-              <div style="flex: 1; display: flex; margin-top: 30%">
+              <div style="flex: 1; display: flex; margin-top: 44%">
                 <ul>
                   <li>Thrust energy >> rocket weight</li>
                   <li>Parabolic trajectory</li>
@@ -215,9 +223,9 @@
 
           <!-- Basics 4 -->
           <section style="justify-content: space-between; align-items: center" >
-            <div style="flex-basis: 50%; text-align: left; height: 100%">
+            <div style="flex-basis: 50%; text-align: left; height: 90%">
               <h2>Orbital Mechanics</h2>
-              <div style="flex: 1; display: flex; margin-top: 25%">
+              <div style="flex: 1; display: flex; margin-top: 15%">
                 <ul style="padding-left: 80px;">
                   <li>Orbit above 160km (LEO)</li>
                   <li>Velocity: ~28128 km/h</li>
@@ -303,24 +311,25 @@
 
           <section style="flex-direction: column; justify-content: center; align-items: center;" data-background-color="#000000">
             <h2>"Computers"</h2>
-            <div style="flex: 1; display: flex; justify-content: space-between;">
-              <div>
-                <h4>Launch Vehicle Digital Computer (LVDC)</h4>
-                <div style="text-align: left; padding-left: 80px;">
-                  <ul>
-                    <li>CPU: 2.048 KHz</li>
-                    <li>Memory: 65MB</li>
+            <div class="fragment" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-top: 40px; width: 100%">
+              <div style="flex-basis: 45%; display: flex; justify-content: space-between; text-align: left;">
+                <div>
+                  <h4>Launch Vehicle Digital Computer (LVDC)</h4>
+                  <ul style="padding-left: 80px;">
+                    <li>CPU: 2 MHz</li>
+                    <li>Memory: 32k</li>
                     <li>Reliability of 99.6%</li>
                     <li>Weight: 32.9 kg</li>
                   </ul>
                 </div>
-                <img data-src="images/AGC_DSKY.jpg" style="margin-top: 60px;" />
+                <img data-src="images/LVDC.jpg" height="337px" />
               </div>
-              <div>
-                <img data-src="images/LVDC.jpg" />
-                <h4 style="margin-top: 60px;">Apollo Guidance Computer (AGC)</h4>
-                <div style="text-align: left; padding-left: 80px;">
-                  <ul>
+              <div class="fragment" style="flex-basis: 50%; display: flex; justify-content: space-between; text-align: left;">
+                <img data-src="images/AGC_DSKY.jpg" width="723px" />
+                <div>
+                  <h4>Apollo Guidance Computer</h4>
+                  <h4>(AGC & DSKY)</h4>
+                  <ul style="text-align: left; padding-left: 80px;">
                     <li>CPU: 2.048 KHz</li>
                     <li>Memory: 65MB</li>
                     <li>Reliability of 99.6%</li>
@@ -406,6 +415,7 @@
           </section>
         </section>
         
+        <!-- After Space Race -->
         <section>
           <section>
             <h2>Space Shuttle</h2>
@@ -421,6 +431,7 @@
           </section>
         </section>
 
+        <!-- Today -->
         <section style="flex-direction: column; align-items: center;">
           <h2>Today</h2>
           <div style="flex: 0.8; display: flex; flex-direction: column; justify-content: center; width: 90%;">
@@ -446,30 +457,33 @@
           </aside>
         </section>
 
+        <!-- SpaceX -->
         <section>
           <section data-background-image="images/spacex_falcon-heavy.jpg">
           </section>
-          <section>
+          <section data-background-image="images/falcon-9-profile.png">
             <h3>Reusability</h3>
-            <iframe data-src="https://external-preview.redd.it/ELK0PQhGc5iXnXjdc8qRjBVElHr_iCPll3m8mnds7qI.png?auto=webp&s=03d7c48a60eab8f1f3df048807dad9f8e7029456" width="100%" height="100%"></iframe>
           </section>
-          <section style="flex-direction: column; align-items: center">
-            <h4>Falcon Heavy Mission</h4>
-            <iframe data-src="https://www.youtube.com/embed/wbSwFU6tY1c?rel=0&amp;controls=0&amp;showinfo=0" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <section style="justify-content: center" data-background-color="#000000">
+            <iframe data-src="https://www.youtube.com/embed/wbSwFU6tY1c?rel=0&amp;controls=0&amp;showinfo=0" width="90%" height="90%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+            <p class="caption">February 2018</p>
           </section>
-          <section style="justify-content: center">
-            <iframe data-src="https://www.youtube.com/embed/VBlIvghQTlI?rel=0&amp;controls=0&amp;showinfo=0" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <section style="justify-content: center" data-background-color="#000000">
+            <iframe data-src="https://www.youtube.com/embed/VBlIvghQTlI?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </section>
-          <section style="justify-content: center">
-            <iframe data-src="https://www.youtube.com/embed/bvim4rsNHkQ?rel=0&amp;controls=0&amp;showinfo=0" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <section style="justify-content: center" data-background-color="#000000">
+            <iframe data-src="https://www.youtube.com/embed/bvim4rsNHkQ?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </section>
         </section>
 
+        <!-- The Future -->
         <section data-background-image="images/moon_BFR.jpg" data-background-color="#000000">
           <h2>The Future</h2>
         </section>
 
-        <section style="justify-content: flex-end;"  data-background-image="images/end_of_journey2.jpg">
+        <!-- End -->
+        <section style="justify-content: flex-end;"  data-background-image="images/end_of_journey.jpg">
           <h2>THANK YOU!</h2>
         </section>
 			</div>
