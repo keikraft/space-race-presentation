@@ -4,6 +4,10 @@ function slideVideoFragmentHandler() {
   let player;
   let playerElem;
 
+  function playerSeekTo(seconds) {
+    player.seekTo(seconds, true);
+  }
+
   function lowerPlayerVolume() {
     const currentVolume = player.getVolume();
     if (currentVolume > 0) {
@@ -21,13 +25,15 @@ function slideVideoFragmentHandler() {
     });
   }
 
-  function fadeOutVideo() {
+  async function fadeOutVideo() {
     playerElem.style.opacity = 0;
+    await fadeOutVolume();
   }
 
   function unmountPlayer() {
     player.stopVideo();
     player = null;
+    playerElem.style.opacity = 1;
     playerElem = null;
   }
 
@@ -38,21 +44,24 @@ function slideVideoFragmentHandler() {
       playerElem.style.transition = `opacity ${fadeOutDuration}ms ease-out`;
     }
 
+    const isPlayerMounted = player && player.getPlayerState;
+    if (event.fragment.classList.contains("video-seek") && isPlayerMounted) {
+      const seconds = event.fragment.classList.item(2);
+      playerSeekTo(seconds);
+    }
+
     if (
       event.fragment.classList.contains("video-fade-out") &&
-      player &&
-      player.getPlayerState
+      isPlayerMounted
     ) {
-      fadeOutVideo();
-      await fadeOutVolume();
+      await fadeOutVideo();
       unmountPlayer();
       Reveal.next();
     }
 
     if (
       event.fragment.classList.contains("video-fade-out-sound") &&
-      player &&
-      player.getPlayerState
+      isPlayerMounted
     ) {
       await fadeOutVolume();
       unmountPlayer();
