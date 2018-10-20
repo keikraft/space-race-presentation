@@ -3,6 +3,45 @@ function slideVideoFragmentHandler() {
   const fadeOutDuration = 1500;
   let player;
   let playerElem;
+  let iframeElem;
+
+  function loadScript() {
+    const script = document.createElement("script");
+    script.id = "yt-iframe";
+    script.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName("script")[0];
+    firstScriptTag.parentNode.insertBefore(script, firstScriptTag);
+  }
+
+  function unloadScript() {
+    const script = document.getElementsById("yt-iframe");
+    script.remove();
+  }
+
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player("existing-iframe-example", {
+      events: {
+        onReady: onPlayerReady,
+        onStateChange: onPlayerStateChange
+      }
+    });
+  }
+
+  function removePlayerHeader(event) {
+    if (playerElem.contentWindow.document) {
+      const titleElem = player.document.getElementByClass("ytp-title");
+      const playlistMenuElem = player.document.getElementByClass(
+        "ytp-playlist-menu-button"
+      );
+      const chromeButtonsElem = player.document.getElementByClass(
+        "ytp-chrome-top-buttons"
+      );
+
+      titleElem.style.display = "none";
+      playlistMenuElem.style.display = "none";
+      chromeButtonsElem.style.display = "none";
+    }
+  }
 
   function playerSeekTo(seconds) {
     player.seekTo(seconds, true);
@@ -33,14 +72,16 @@ function slideVideoFragmentHandler() {
   function unmountPlayer() {
     player.stopVideo();
     player = null;
-    playerElem.style.opacity = 1;
-    playerElem = null;
+    playerElem = iframeElem;
+    unloadScript();
+    setTimeout(() => (playerElem.style.opacity = 1), 200);
   }
 
   async function fragmentEventHandler(event) {
     if (event.fragment.classList.contains("video")) {
-      player = new YT.Player(event.fragment, {});
-      playerElem = event.fragment;
+      loadScript();
+      // player = new YT.Player(event.fragment, {});
+      playerElem = player.getIframe();
       playerElem.style.transition = `opacity ${fadeOutDuration}ms ease-out`;
     }
 
