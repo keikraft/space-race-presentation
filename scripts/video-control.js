@@ -1,56 +1,16 @@
 // Slides Youtube Videos Control
 function slideVideoFragmentHandler() {
   const fadeOutDuration = 1500;
-  let player;
-  let playerElem;
-  let iframeElem;
-
-  function loadScript() {
-    const script = document.createElement("script");
-    script.id = "yt-iframe";
-    script.src = "https://www.youtube.com/iframe_api";
-    const firstScriptTag = document.getElementsByTagName("script")[0];
-    firstScriptTag.parentNode.insertBefore(script, firstScriptTag);
-  }
-
-  function unloadScript() {
-    const script = document.getElementsById("yt-iframe");
-    script.remove();
-  }
-
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player("existing-iframe-example", {
-      events: {
-        onReady: onPlayerReady,
-        onStateChange: onPlayerStateChange
-      }
-    });
-  }
-
-  function removePlayerHeader(event) {
-    if (playerElem.contentWindow.document) {
-      const titleElem = player.document.getElementByClass("ytp-title");
-      const playlistMenuElem = player.document.getElementByClass(
-        "ytp-playlist-menu-button"
-      );
-      const chromeButtonsElem = player.document.getElementByClass(
-        "ytp-chrome-top-buttons"
-      );
-
-      titleElem.style.display = "none";
-      playlistMenuElem.style.display = "none";
-      chromeButtonsElem.style.display = "none";
-    }
-  }
+  let videoElem;
 
   function playerSeekTo(seconds) {
-    player.seekTo(seconds, true);
+    videoElem.fastSeek(seconds);
   }
 
   function lowerPlayerVolume() {
-    const currentVolume = player.getVolume();
+    const currentVolume = videoElem.volume;
     if (currentVolume > 0) {
-      player.setVolume(currentVolume - 1);
+      videoElem.volume = parseFloat((currentVolume - 0.01).toFixed(2));
     }
   }
 
@@ -65,45 +25,37 @@ function slideVideoFragmentHandler() {
   }
 
   async function fadeOutVideo() {
-    playerElem.style.opacity = 0;
+    videoElem.style.opacity = 0;
     await fadeOutVolume();
   }
 
   function unmountPlayer() {
-    player.stopVideo();
-    player = null;
-    playerElem = iframeElem;
-    unloadScript();
-    setTimeout(() => (playerElem.style.opacity = 1), 200);
+    setTimeout(() => {
+      videoElem.load();
+      videoElem.volume = 1;
+      videoElem.style.opacity = 1;
+    }, 300);
   }
 
   async function fragmentEventHandler(event) {
-    if (event.fragment.classList.contains("video")) {
-      loadScript();
-      // player = new YT.Player(event.fragment, {});
-      playerElem = player.getIframe();
-      playerElem.style.transition = `opacity ${fadeOutDuration}ms ease-out`;
+    const fragmentClass = event.fragment.classList.item(1);
+    if (fragmentClass === "video") {
+      videoElem = event.fragment;
+      videoElem.style.transition = `opacity ${fadeOutDuration}ms ease-out`;
     }
 
-    const isPlayerMounted = player && player.getPlayerState;
-    if (event.fragment.classList.contains("video-seek") && isPlayerMounted) {
+    if (fragmentClass === "video-seek" && videoElem) {
       const seconds = event.fragment.classList.item(2);
       playerSeekTo(seconds);
     }
 
-    if (
-      event.fragment.classList.contains("video-fade-out") &&
-      isPlayerMounted
-    ) {
+    if (fragmentClass === "video-fade-out" && videoElem) {
       await fadeOutVideo();
       unmountPlayer();
       Reveal.next();
     }
 
-    if (
-      event.fragment.classList.contains("video-fade-out-sound") &&
-      isPlayerMounted
-    ) {
+    if (fragmentClass === "video-fade-out-sound" && videoElem) {
       await fadeOutVolume();
       unmountPlayer();
       Reveal.next();
@@ -111,12 +63,11 @@ function slideVideoFragmentHandler() {
   }
 
   function playbackEventHandler() {
-    if (player && player.getPlayerState) {
-      const playerState = player.getPlayerState();
-      if (playerState === 1) {
-        player.pauseVideo();
+    if (videoElem) {
+      if (!videoElem.paused) {
+        videoElem.pause();
       } else {
-        player.playVideo();
+        videoElem.play();
       }
     }
   }
