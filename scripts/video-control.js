@@ -4,7 +4,7 @@ function slideVideoFragmentHandler() {
   let videoElem;
 
   function playerSeekTo(seconds) {
-    videoElem.fastSeek(seconds);
+    videoElem.currentTime = seconds;
   }
 
   function lowerPlayerVolume() {
@@ -33,6 +33,7 @@ function slideVideoFragmentHandler() {
     setTimeout(() => {
       videoElem.load();
       videoElem.volume = 1;
+      videoElem.currentTime = 0;
       videoElem.style.opacity = 1;
     }, 300);
   }
@@ -40,13 +41,15 @@ function slideVideoFragmentHandler() {
   async function fragmentEventHandler(event) {
     const fragmentClass = event.fragment.classList.item(1);
     if (fragmentClass === "video") {
+      const startTime = event.fragment.classList.item(2);
       videoElem = event.fragment;
+      videoElem.currentTime = startTime || 0;
       videoElem.style.transition = `opacity ${fadeOutDuration}ms ease-out`;
     }
 
     if (fragmentClass === "video-seek" && videoElem) {
       const seconds = event.fragment.classList.item(2);
-      playerSeekTo(seconds);
+      playerSeekTo(parseInt(seconds, 10));
     }
 
     if (fragmentClass === "video-fade-out" && videoElem) {
