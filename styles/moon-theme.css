@@ -205,6 +205,7 @@ body {
 
 .reveal small {
   display: inline-block;
+  font-weight: 200;
   font-size: 0.6em;
   line-height: 1.2em;
   vertical-align: top;

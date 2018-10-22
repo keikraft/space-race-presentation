@@ -3,11 +3,19 @@ function slideVideoFragmentHandler() {
   const fadeOutDuration = 1500;
   let videoElem;
 
-  function playerSeekTo(seconds) {
+  function loadVideo(elem, startTime) {
+    videoElem = elem;
+    videoElem.volume = 1;
+    videoElem.currentTime = startTime || 0;
+    videoElem.style.opacity = 1;
+    videoElem.style.transition = `opacity ${fadeOutDuration}ms ease-out`;
+  }
+
+  function VideoSeekTo(seconds) {
     videoElem.currentTime = seconds;
   }
 
-  function lowerPlayerVolume() {
+  function lowerVideoVolume() {
     const currentVolume = videoElem.volume;
     if (currentVolume > 0) {
       videoElem.volume = parseFloat((currentVolume - 0.01).toFixed(2));
@@ -16,7 +24,7 @@ function slideVideoFragmentHandler() {
 
   function fadeOutVolume() {
     return new Promise(resolve => {
-      const timerId = setInterval(lowerPlayerVolume, 10);
+      const timerId = setInterval(lowerVideoVolume, 10);
       setTimeout(() => {
         clearInterval(timerId);
         resolve();
@@ -29,38 +37,25 @@ function slideVideoFragmentHandler() {
     await fadeOutVolume();
   }
 
-  function unmountPlayer() {
-    setTimeout(() => {
-      videoElem.load();
-      videoElem.volume = 1;
-      videoElem.currentTime = 0;
-      videoElem.style.opacity = 1;
-    }, 300);
-  }
-
   async function fragmentEventHandler(event) {
     const fragmentClass = event.fragment.classList.item(1);
     if (fragmentClass === "video") {
       const startTime = event.fragment.classList.item(2);
-      videoElem = event.fragment;
-      videoElem.currentTime = startTime || 0;
-      videoElem.style.transition = `opacity ${fadeOutDuration}ms ease-out`;
+      loadVideo(event.fragment, startTime);
     }
 
     if (fragmentClass === "video-seek" && videoElem) {
       const seconds = event.fragment.classList.item(2);
-      playerSeekTo(parseInt(seconds, 10));
+      VideoSeekTo(parseInt(seconds, 10));
     }
 
     if (fragmentClass === "video-fade-out" && videoElem) {
       await fadeOutVideo();
-      unmountPlayer();
       Reveal.next();
     }
 
     if (fragmentClass === "video-fade-out-sound" && videoElem) {
       await fadeOutVolume();
-      unmountPlayer();
       Reveal.next();
     }
   }

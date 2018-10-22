@@ -33,7 +33,7 @@
             Why?
 					</aside>
         </section>
-        
+
         <!-- Space Race Early Events -->
 				<section>
 					<!-- Go -->
@@ -105,25 +105,6 @@
             </div>
           </section>
 
-          <!-- Mercury -->
-          <section>
-            <div style="flex:1; display: flex; justify-content: space-between; align-items: center">
-              <div style="flex-basis: 70%; height: 100%; align-items: center;display: flex;justify-content: flex-start;">
-                <img data-src="media/images/mercury.gif" height="700px" />
-              </div>
-              <div style="flex-basis: 40%; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; height: 80%;">
-                <h2 style="text-align: left; margin: 0; line-height: 1;">Mercury Program</h2>
-                <div style="text-align: left;">
-                  <p style="margin: 0;">Last test before Alan Shepard flight.</span>
-                </div>
-              </div>
-
-              <div class="caption">
-                1958 - 1963
-              </div>
-            </div>
-          </section>
-
 					<!-- Gagarin -->
 					<section>
 						<div style="flex:1; display: flex; justify-content: space-between; align-items: center">
@@ -144,7 +125,26 @@
 						<aside class="notes">
 							Poyekhali! - Let's go!
 						</aside>
-					</section>
+          </section>
+          
+          <!-- Mercury -->
+          <section>
+            <div style="flex:1; display: flex; justify-content: space-between; align-items: center">
+              <div style="flex-basis: 70%; height: 100%; align-items: center;display: flex;justify-content: flex-start;">
+                <img data-src="media/images/mercury.gif" height="700px" />
+              </div>
+              <div style="flex-basis: 40%; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; height: 80%;">
+                <h2 style="text-align: left; margin: 0; line-height: 1;">Mercury Program</h2>
+                <div style="text-align: left;">
+                  <p style="margin: 0;">Last test before Alan Shepard flight.</span>
+                </div>
+              </div>
+
+              <div class="caption">
+                1958 - 1963
+              </div>
+            </div>
+          </section>
 					
 					<!-- Kennedy Speech -->
 					<section style="flex-direction: column; align-items: center">
@@ -252,7 +252,7 @@
               <h2 style="text-align: left; margin: 0; line-height: 1;">EVA</h2>
               <div style="text-align: left;">
                 <h4 style="margin: 0; font-weight: 600;">Alexey Leonov</h4>
-                <h2 style="margin: 0;">first spacewalk</span>
+                <p style="margin: 0;">first spacewalk</p>
               </div>
             </div>
             <div style="flex-basis: 70%; height: 100%; align-items: center;display: flex;justify-content: flex-end;">
@@ -266,7 +266,7 @@
 
         <!-- Gemini Missions -->
         <section style="flex-direction: column;">
-          <h4>Gemini Missions</h4>
+          <h2>Gemini Missions</h2>
           <div style="flex: 1; display: flex; justify-content: space-between; align-items: center">
             <div style="flex-basis: 50%; text-align: left; padding-left: 80px;">
               <ul style="flex-basis: 70%; text-align: left">
@@ -277,7 +277,7 @@
                 <li>EVA</li>
               </ul>
             </div>
-            <video muted data-autoplay data-src="media/videos/edit/gemini.mp4" width="80%" height="80%"></video>
+            <video muted data-autoplay class="fragment video" data-src="media/videos/edit/gemini.mp4" width="80%" height="80%"></video>
             <!-- <iframe data-src="https://www.youtube.com/embed/_cHm7bJolnE?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1&amp;modestbranding=1&amp;loop=1&amp;playlist=_cHm7bJolnE&amp;mute=1" width="80%" height="80%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
           </div>
 
@@ -288,8 +288,20 @@
           </aside>
         </section>
 
-        <!-- Saturn V -->
+        <!-- Apollo Missions -->
         <section>
+          <section style="flex-direction: column; justify-content: center; align-items: flex-start;">
+            <h1 style="margin: 0;">Apollo</h1>
+            <h1>Missions</h1>
+            <div class="caption">1968 - 1973</div>
+
+            <aside class="notes">
+              ~400.000 people worked to make it happen
+              https://www.theguardian.com/science/2009/jul/02/apollo-11-back-up-team
+            </aside>
+          </section>
+
+          <!-- Saturn V -->
           <section style="flex-direction: column;" data-background-color="#000000">
             <h1 style="text-align: left; margin-bottom: 60px; padding-left: 75px;">Saturn V</h1>
             <div class="fragment" style="text-align: left; padding-left: 80px;">
@@ -345,22 +357,9 @@
               Let's see it in all its glory! ^_^
             </aside>
           </section>
-        </section>
-
-				<!-- Apollo Missions -->
-				<section>
-          <section style="flex-direction: column; justify-content: center; align-items: flex-start;">
-            <h1 style="margin: 0;">Apollo</h1>
-            <h1>Missions</h1>
-            <div class="caption">1968 - 1973</div>
-
-            <aside class="notes">
-              People worked to make it happen
-              https://www.theguardian.com/science/2009/jul/02/apollo-11-back-up-team
-            </aside>
-          </section>
   
-          <section style="flex-direction: column;" data-background-color="#090909">
+          <!-- The Journey -->
+          <section style="flex-direction: column;" data-background-color="#000000">
             <h2 id="the-journey-title" style="transition: opacity 1s ease-in-out;">The Journey</h2>
             <div class="fragment" style="flex: 1; display: flex; justify-content: center; align-items: center;">
               <span class="fragment journey initialPosition"></span>
@@ -382,31 +381,44 @@
 
           <section style="flex-direction: column;">
             <h2>Their Journey</h2>
-            <div class="fragment fade-in-then-semi-out">
-              <h4>”I didn’t feel like a giant. I felt very, very small.”</h4>
-              <p>-- Neil Armstrong on looking back at the Earth from the Moon in July 1969.</p>
-            </div>
-            <div class="fragment fade-in-then-semi-out">
-              <h4>“From out there on the Moon, international politics look so petty. You want to grab a politician by the scruff of the neck and drag him a quarter of a million miles out and say, ‘Look at that, you son of a bitch.’”</h4>
-              <p>-- Edgar Mitchel, Apollo 14.</p>
-            </div>
-            <div class="fragment fade-in-then-semi-out">
-              <h4>"As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man."</h4>
-              <p>—- James Irwin, Apollo 15.</p>
-            </div>
-            <div class="fragment fade-in-then-semi-out">
-              <h4>"To see your own hometown, you have to leave and go and come back," he said. "They did the ultimate trip. They left Earth and leaving Earth and coming back allowed them to see what it really is."</h4>
-              <p>—- David Sington, "In the Shadow of the Moon" documentary filmmaker.</p>
-            </div>
-            <div class="fragment fade-in-then-semi-out">
-              <h4>"I felt that the world was just too beautiful to have happened by accident. There has to be something bigger than you and bigger than me, and it's not God nor any religion."</h4>
-              <p>—- Gene Cernan, Apollo 17.</p>
-            </div>
-            <div class="fragment fade-in-then-semi-out">
-              <h4>"I remember thinking in lunar orbit, that if I got back from this, I was going to live my life differently, in that I was going to try to live it … like I want to live it," he said in an interview with Chaikin. "Mostly it made me have a lot of courage to do what I wanted to do and be happy about it. … That's one thing that really allowed me to be an artist. I probably wouldn't have had the courage to be an artist."</h4>
-              <p>—- Alan Bean, Apollo 12.</p>
+            <div style="flex: 1; position: relative; width: 100%; height: 100%;">
+              <div class="fragment fade-in-then-out" style="position: absolute; top: 25%; left: 0; right: 0;">
+                <h4 style="margin-bottom: 80px; line-height: 1.4;">”I didn’t feel like a giant. I felt very, very small.”</h4>
+                <small style="width: 100%; text-align: left;">-- Neil Armstrong, Apollo 11.</small>
+              </div>
+              <div class="fragment fade-in-then-out" style="position: absolute; top: 25%; left: 0; right: 0;">
+                <h4 style="margin-bottom: 80px; line-height: 1.4;">“From out there, international politics look so petty. You want to grab a politician by the scruff of the neck and drag him a quarter of a million miles out and say, ‘Look at that, you son of a bitch.’”</h4>
+                <small style="width: 100%; text-align: left;">-- Edgar Mitchel, Apollo 14.</small>
+              </div>
+              <div class="fragment fade-in-then-out" style="position: absolute; top: 25%; left: 0; right: 0;">
+                <h4 style="margin-bottom: 80px; line-height: 1.4;">"My god! That little thing looks so fragile out there."</h4>
+                <small style="width: 100%; text-align: left;">-- Michael Collins, Apollo 11.</small>
+              </div>
+              <div class="fragment fade-in-then-out" style="position: absolute; top: 25%; left: 0; right: 0;">
+                <h4 style="margin-bottom: 80px; line-height: 1.4;">"It's a really weird feeling to be just two people in this whole big place, and that's it."</h4>
+                <small style="width: 100%; text-align: left;">-- Alan Bean, Apollo 12.</small>
+              </div>
+              <div class="fragment fade-in-then-out" style="position: absolute; top: 25%; left: 0; right: 0;">
+                <h4 style="margin-bottom: 80px; line-height: 1.4;">"The moon was the most spectacularly beautiful desert you can ever imagined, unspoiled, untouched."</h4>
+                <small style="width: 100%; text-align: left;">-- Charlie Duke, Apollo 16.</small>
+              </div>
+              <div class="fragment fade-in-then-out" style="position: absolute; top: 25%; left: 0; right: 0;">
+                <h4 style="margin-bottom: 80px; line-height: 1.4;">"Every country we visited, people instead of saying, you americans did it, they said, WE did it, we the human race did it. I never heard people from different countries saying WE this enphatically. It was wonderful, and sad it was so ephemeral..."</h4>
+                <small style="width: 100%; text-align: left;">-- Michael Collins, Apollo 11.</small>
+              </div>
+              <div class="fragment fade-in-then-out" style="position: absolute; top: 25%; left: 0; right: 0;">
+                <h4 style="margin-bottom: 80px; line-height: 1.4;">"Since that time, I have not complained about the weather one single time, I'm glad there is weather."</h4>
+                <small style="width: 100%; text-align: left;">-- Alan Bean, Apollo 12.</small>
+              </div>
+              <div class="fragment fade-in-then-out" style="position: absolute; top: 25%; left: 0; right: 0;">
+                <h4 style="margin-bottom: 80px; line-height: 1.4;">"I felt that the world was just too beautiful to have happened by accident. There has to be something bigger than you and bigger than me, and it's not God nor any religion."</h4>
+                <small style="width: 100%; text-align: left;">-- Gene Cernan, Apollo 17.</small>
+              </div>
             </div>
 
+            <aside class="notes">
+              The only people who has seen the earth this way have been the 24 astronauts who went to the moon...
+            </aside>
           </section>
         </section>
         
