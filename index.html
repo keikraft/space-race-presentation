@@ -328,15 +328,22 @@
 
           <section style="flex-direction: column;" data-background-color="#000000">
             <h2>The Computers</h2>
-            <div style="flex: 1; display: flex; justify-content: space-between; align-items: center">
-              <div style="flex-basis: 50%; text-align: left; padding-left: 80px;">
-                <h4>Specs</h4>
+            <div style="flex: 1; display: flex; justify-content: space-between; align-items: center; margin-top: 40px;">
+              <div style="flex-basis: 60%; display: flex; flex-direction: column; justify-content: space-between; text-align: left; padding-left: 80px; height: 80%">
                 <ul style="padding-left: 80px;">
-                  <li>CPU: 2 MHz</li>
-                  <li>Memory: 32k</li>
-                  <li>Reliability of 99.6%</li>
-                  <li>Weight: 32.9 kg</li>
+                  <li>Launch Vehicle Digital Computer</li>
+                  <li>Apollo Guidance Computer</li>
                 </ul>
+                <div>
+                  <h4>Specs</h4>
+                  <ul style="list-style-type: none;">
+                    <li>CPU: 2 MHz</li>
+                    <li>Memory: 32k</li>
+                    <li>Weight: 32.9 kg</li>
+                    <li>Fortran & Punch Cards</li>
+                    <li>Reliability of 99.6%</li>
+                  </ul>
+                </div>
               </div>
               <div>
                 <img data-src="media/images/LVDC.jpg" height="337px" />
@@ -345,7 +352,7 @@
             </div>
             <!-- <iframe data-src="https://www.youtube.com/embed/CkOOazEJcUc?rel=0&amp;autoplay=1&amp;controls=0&amp;showinfo=0&amp;loop=1&amp;playlist=CkOOazEJcUc&amp;start=273&amp;end=302&amp;mute=1" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
             <aside class="notes">
-              Apollo Guidance Computer (AGC & DSKY)
+              Apollo Guidance Computer (AGC & DSKY) -> It is regarded as the first embedded computer and the one to use integrated circuits.
             </aside>
           </section>
 
@@ -369,8 +376,11 @@
               <span class="fragment journey backHome"></span>
               <span class="fragment journey reentry"></span>
               <span class="fragment journey initialPosition"></span>
+
               <img id="the-journey-img" data-src="media/images/journey_to_the_moon.jpg" style="transition-property: transform; transition-timing-function: ease-in-out;" />
             </div>
+            
+            <video id="the-journey-video" loop src="" width="50%" height="50%" style="position: absolute; transition: opacity .8s ease-in-out;"></video>
 
             <aside class="notes">
               - They were not fearful, but mildly worried all the time, because they didn't if everything were going to work as expected, it was very fragile chain of events and if any go wrong the whoel thing could have been compromised.
@@ -432,7 +442,7 @@
             <h3>Space Shuttle</h3>
             <p class="caption">1981 - 2011</p>
           </section>
-          <section style="flex-direction: column; justify-content: center; align-items: flex-start;" data-background-color="#020601">
+          <section style="flex-direction: column; justify-content: center; align-items: flex-start;" data-background-color="#000000">
             <h2>Mir</h2><p>Space Station</p>
             <img data-src="media/images/mir-shuttle.jpg" height="1200px" style="position: absolute; right: -100px; z-index: -1;" />
             <p class="caption">1986 - 2001</p>
@@ -443,13 +453,14 @@
           </section>
           <section data-background-image="media/images/mars-exploration.jpg" data-background-color="#000000">
             <h3>Mars Exploration</h3>
+            <p class="caption">1998 - Today</p>
           </section>
         </section>
 
         <!-- Today -->
         <section style="flex-direction: column; align-items: center;">
           <h2>Today</h2>
-          <div style="flex: 0.8; display: flex; flex-direction: column; justify-content: center; width: 90%;">
+          <div style="flex: 0.8; display: flex; flex-direction: column; justify-content: center; width: 90%; margin-top: 40px;">
             <div style="flex: 1; display: flex; justify-content: space-between; align-items: center;">
               <img data-src="media/images/logo_spaceX.png" height="80px" />
               <img data-src="media/images/logo_boeing.png" height="80px" />
@@ -476,7 +487,7 @@
         <section>
           <section data-background-image="media/images/spacex_falcon-heavy.jpg">
           </section>
-          <section data-background-image="media/images/falcon-9-profile.png">
+          <section data-background-image="media/images/falcon-9-profile.jpg">
             <h3 style="font-size: 1.35em">Reusability</h3>
           </section>
           <section style="justify-content: center" data-background-color="#000000">

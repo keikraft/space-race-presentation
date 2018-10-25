@@ -23,7 +23,7 @@ Reveal.initialize({
 
   // Parallax Background
   parallaxBackgroundImage: "media/images/sky_background.jpg",
-  parallaxBackgroundSize: "1980px 1080px",
+  parallaxBackgroundSize: "3960px 2160px",
 
   // Slides Layout
   display: "flex",
