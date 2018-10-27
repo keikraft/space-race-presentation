@@ -9,31 +9,31 @@ function theJourneyFragmentHandler() {
     launch: {
       transform: "scale(3) translate(300px, 20px)",
       duration: 1000,
-      video: "media/videos/edit/journey-1.mp4",
+      video: "media/videos/journey-1.mp4",
       videoPosition: { top: "-70px", right: "-90px" }
     },
     toTheMoon: {
       transform: "scale(3.5) translate(370px, -130px)",
       duration: 800,
-      video: "media/videos/edit/journey-2.mp4",
+      video: "media/videos/journey-2.mp4",
       videoPosition: { top: "-70px", right: "-90px" }
     },
     landing: {
       transform: "scale(3.5) translate(-450px, -150px)",
       duration: 5000,
-      video: "media/videos/edit/journey-2.mp4",
+      video: "media/videos/journey-3.mp4",
       videoPosition: { bottom: "10px", left: "-90px" }
     },
     backHome: {
       transform: "scale(3.5) translate(-450px, 130px)",
       duration: 1000,
-      video: "media/videos/edit/journey-2.mp4",
+      video: "media/videos/journey-4.mp4",
       videoPosition: { top: "-70px", left: "-90px" }
     },
     reentry: {
       transform: "scale(3.5) translate(550px, 70px",
       duration: 5000,
-      video: "media/videos/edit/journey-2.mp4",
+      video: "media/videos/journey-5.mp4",
       videoPosition: { bottom: "-25px", right: "-90px" }
     }
   };
