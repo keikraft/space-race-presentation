@@ -27,6 +27,7 @@ function slideVideoFragmentHandler() {
       const timerId = setInterval(lowerVideoVolume, 10);
       setTimeout(() => {
         clearInterval(timerId);
+        videoElem.load();
         resolve();
       }, fadeOutDuration);
     });
@@ -35,6 +36,7 @@ function slideVideoFragmentHandler() {
   async function fadeOutVideo() {
     videoElem.style.opacity = 0;
     await fadeOutVolume();
+    videoElem.load();
   }
 
   async function fragmentEventHandler(event) {
