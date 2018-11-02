@@ -6,7 +6,7 @@ function slideVideoFragmentHandler() {
   function loadVideo(elem, startTime) {
     videoElem = elem;
     videoElem.volume = 1;
-    videoElem.currentTime = startTime || 0;
+    videoElem.currentTime = startTime;
     videoElem.style.opacity = 1;
     videoElem.style.transition = `opacity ${fadeOutDuration}ms ease-out`;
   }
@@ -42,7 +42,8 @@ function slideVideoFragmentHandler() {
   async function fragmentEventHandler(event) {
     const fragmentClass = event.fragment.classList.item(1);
     if (fragmentClass === "video") {
-      const startTime = event.fragment.classList.item(2);
+      const timeClass = event.fragment.classList.item(2);
+      const startTime = parseInt(timeClass, 10) || 0;
       loadVideo(event.fragment, startTime);
     }
 

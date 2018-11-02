@@ -13,13 +13,13 @@ function theJourneyFragmentHandler() {
       videoPosition: { top: "-70px", right: "-90px" }
     },
     toTheMoon: {
-      transform: "scale(3.5) translate(370px, -130px)",
+      transform: "scale(3.5) translate(370px, -140px)",
       duration: 800,
       video: "media/videos/journey-2.mp4",
-      videoPosition: { top: "-70px", right: "-90px" }
+      videoPosition: { top: "-70px", left: "-90px" }
     },
     landing: {
-      transform: "scale(3.5) translate(-450px, -150px)",
+      transform: "scale(3.5) translate(-435px, -150px)",
       duration: 5000,
       video: "media/videos/journey-3.mp4",
       videoPosition: { bottom: "10px", left: "-90px" }
@@ -31,7 +31,7 @@ function theJourneyFragmentHandler() {
       videoPosition: { top: "-70px", left: "-90px" }
     },
     reentry: {
-      transform: "scale(3.5) translate(550px, 70px",
+      transform: "scale(3.5) translate(470px, 70px",
       duration: 5000,
       video: "media/videos/journey-5.mp4",
       videoPosition: { bottom: "-25px", right: "-90px" }
@@ -41,6 +41,7 @@ function theJourneyFragmentHandler() {
   const journeyTitleElem = document.getElementById("the-journey-title");
   const journeyImageElem = document.getElementById("the-journey-img");
   const journeyVideoElem = document.getElementById("the-journey-video");
+  journeyVideoElem.addEventListener("ended", fadeOutVideo);
 
   function fadeOutVideo() {
     journeyVideoElem.style.opacity = 0;
@@ -55,7 +56,7 @@ function theJourneyFragmentHandler() {
   function fadeInVideo(src) {
     journeyVideoElem.src = src;
     journeyVideoElem.style.opacity = 1;
-    journeyVideoElem.play();
+    //journeyVideoElem.play();
     return new Promise(resolve => setTimeout(() => resolve(), 800));
   }
 
@@ -93,7 +94,6 @@ function theJourneyFragmentHandler() {
       if (stage !== "initialPosition") {
         setVideoPosition(videoPosition);
         await fadeInVideo(video);
-      } else {
       }
     }
   }
